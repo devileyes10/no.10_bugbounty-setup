@@ -1,6 +1,6 @@
 # no.10_bugbounty-setup
 Start with why! 
-Too lazy to keep installing needed tools for VPS
+Too lazy to keep installing needed tools for VPS again and again
 
 # Tools Included
 - python2, python3 and its neccessary libraries
