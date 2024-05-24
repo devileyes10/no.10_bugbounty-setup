@@ -91,7 +91,8 @@ cd /opt/ulti
 git clone https://github.com/swisskyrepo/GraphQLmap
 cd GraphQLmap
 python3 setup.py install
-
+#waybackrobots
+go install github.com/vodafon/waybackrobots@latest
 
 #----------------Install wordlist
 echo -e "\e[93m\e[1m----> Gathering the wordlists";
