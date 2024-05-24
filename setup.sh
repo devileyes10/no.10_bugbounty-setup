@@ -53,6 +53,12 @@ sudo wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 sudo python2.7 get-pip.py
 echo -e "\e[32mDone!";
 sleep 1.5
+# Install Flask
+pip3 install Flask --break-system-packages
+
+#----------------Install Linux Necessary tols
+sudo apt install tree
+sudo apt install net-tools
 
 #----------------Install Network Scanner
 # 
@@ -91,8 +97,25 @@ cd /opt/ulti
 git clone https://github.com/swisskyrepo/GraphQLmap
 cd GraphQLmap
 python3 setup.py install
-#waybackrobots
+# waybackrobots
 go install github.com/vodafon/waybackrobots@latest
+# knockpy
+cd /opt/ulti
+git clone https://github.com/guelfoweb/knock.git
+cd knock
+pip install .
+# karma_v2
+cd /opt/ulti
+git clone https://github.com/Dheerajmadhukar/karma_v2.git
+python3 -m pip install -U shodan --break-system-packages
+python3 -m pip install -U mmh3 --break-system-packages
+cd karma_v2
+chmod u+x install.sh
+./install.sh
+# shosubgo
+go install github.com/incogbyte/shosubgo@latest
+# wtfis
+pip3 install wtfis --break-system-packages
 
 #----------------Install wordlist
 echo -e "\e[93m\e[1m----> Gathering the wordlists";
@@ -124,5 +147,9 @@ rm -r WordList
 cd /opt/wordlists
 git clone https://github.com/App0x1e/devileyes-wordlists
 
+# remove all wordlist that have / as the first character
+echo -e "\e[93m\e[1m----> Remove all wordlist that have / as the first character";
+chmod u+x remove-slash.sh
+./remove-slash.sh /opt/wordlists/
 
 echo -e "\e[92mDone! Mission Completed!\e[0m\e[39m"; echo "";
